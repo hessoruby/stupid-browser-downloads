@@ -1,11 +1,11 @@
 {
   "formatVersion": 1,
   "product": "Stupid Browser",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "channel": "testing preview",
-  "releaseTag": "v0.1.0-preview.20261003.1",
-  "recordedAt": "2026-10-04T05:20:51.666Z",
-  "sourceCommit": "f07611cc2873d8ee2cf480d73766e06481fc41ce",
+  "releaseTag": "v0.1.1-preview.20261004.1",
+  "recordedAt": "2026-10-04T11:25:22.239873+00:00",
+  "sourceCommit": "5cf91e58ac7bc16b06b4242c7b69bec1dc7904be",
   "sourceTree": "clean",
   "sourceVisibility": "private",
   "license": "MIT",
@@ -15,54 +15,60 @@
     "chromium": "152.0.7977.130",
     "electronBuilder": "26.15.3"
   },
-  "applicationAsarSha256": "72d93a895b5b44b0836fdeb35158957956500977130a6f0ea43976f8b869e5f1",
+  "applicationAsarSha256": "8f60af2eadbbc0e9bcc5cc90b7e745f1492ededee5e172ed6f2b8515d02b0e50",
   "signed": false,
   "automaticUpdater": false,
   "artifacts": [
     {
-      "name": "Stupid-Browser-0.1.0-x86_64.AppImage",
-      "bytes": 131009995,
-      "sha256": "1e1c8e169ca422c2053aaed9a17a64d716d0b2b887a07396bec8d1d5d7786bd4"
+      "name": "Stupid-Browser-0.1.1-x86_64.AppImage",
+      "bytes": 131022344,
+      "sha256": "9d7588ee1c93fd0bb3f671b8866db36e8209615396b2e9e4f20bb7134ee0dbdf"
     },
     {
-      "name": "Stupid-Browser-0.1.0-x64.tar.gz",
-      "bytes": 124639123,
-      "sha256": "ab3a658429dc2a042350ae13d91decfbbb355e90634b95df0587a5e38577c545"
+      "name": "Stupid-Browser-0.1.1-x64.tar.gz",
+      "bytes": 124647280,
+      "sha256": "7773cb0703af55e398e08955b8974e58ed6f8f1a0b3f5a180c8bc553ead39eef"
     },
     {
-      "name": "Stupid-Browser-0.1.0-x64.zip",
-      "bytes": 158607513,
-      "sha256": "57c6111e91dd7d66e3a50c89d9ce727e02517e82e197842f73f8ae5b15fc7bb7"
+      "name": "Stupid-Browser-0.1.1-x64.zip",
+      "bytes": 158615971,
+      "sha256": "9225f36f568b9ff1ad19aec5a816f1b5ed675a62d1b06d84ffb24daf6bc9d4ab"
     }
   ],
   "verification": {
     "typecheck": "passed",
+    "build": "passed",
     "unitTests": {
-      "passed": 134,
+      "passed": 171,
       "failed": 0,
       "skipped": 0
     },
     "linux": {
       "packagedRuntimeChecks": 8,
-      "extractedAppImageRuntimeChecks": 8,
-      "installedRuntimeChecks": 8,
+      "packagedBlockerCases": 6,
+      "securityRuntimeGroups": 12,
+      "recordingWithoutFFmpeg": "passed: stop, switch, close, quit, internal page, encoder errors, renderer loss",
+      "recordingWithFFmpeg": "passed: stop, switch, close, quit",
+      "directVideoDownloadAndProgress": "passed",
       "archiveAndFuseChecks": "passed",
-      "fuseMountExecution": "not tested"
+      "fullE2E": "not completed: virtual X11 lacks WebGL; native Wayland reached fullscreen check then compositor-state timeout"
     },
     "windows": {
       "archiveIntegrity": "passed",
       "packageInventory": "passed",
       "securityFuses": "passed",
+      "officialHelperDownloadHashes": "passed",
+      "FFmpegSelectedMemberExtraction": "passed",
       "nativeRuntime": "not tested",
-      "nativeInstaller": "not included; cross-build helper failed in Wine"
-    },
-    "browserWorkflow": "passed with disposable Linux profiles",
-    "roadmapCompletion": "not claimed"
+      "nativeInstaller": "not included"
+    }
   },
   "limitations": [
-    "Unsigned testing preview; not a Windows production qualification.",
-    "SHA-256 checksums on the same release account do not independently authenticate a compromised publisher.",
-    "Recording requires separate FFmpeg; optional video extraction also requires separate yt-dlp.",
-    "No DRM provider, full Chrome extension system, website credential vault, encrypted sync or signed update channel is included."
+    "Unsigned preview; native Windows execution still needs validation.",
+    "YouTube video ads may remain; the blocker does not guarantee every ad is removed.",
+    "Windows video extraction requires an explicit UPDATE HELPER action with an internet connection; its pinned tools are not bundled in the ZIP.",
+    "Recording is video-only at 15 fps; Chromium fallback caps resolution at 1920x1080.",
+    "Full Linux workflow qualification was blocked by display/fullscreen test environment; targeted runtime checks passed.",
+    "No signed automatic updater or licensed DRM provider is included."
   ]
 }
