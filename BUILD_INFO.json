@@ -1,0 +1,68 @@
+{
+  "formatVersion": 1,
+  "product": "Stupid Browser",
+  "version": "0.1.0",
+  "channel": "testing preview",
+  "releaseTag": "v0.1.0-preview.20261003.1",
+  "recordedAt": "2026-10-04T05:20:51.666Z",
+  "sourceCommit": "f07611cc2873d8ee2cf480d73766e06481fc41ce",
+  "sourceTree": "clean",
+  "sourceVisibility": "private",
+  "license": "MIT",
+  "buildHostPlatform": "Linux x86_64",
+  "toolchain": {
+    "electron": "44.5.1",
+    "chromium": "152.0.7977.130",
+    "electronBuilder": "26.15.3"
+  },
+  "applicationAsarSha256": "72d93a895b5b44b0836fdeb35158957956500977130a6f0ea43976f8b869e5f1",
+  "signed": false,
+  "automaticUpdater": false,
+  "artifacts": [
+    {
+      "name": "Stupid-Browser-0.1.0-x86_64.AppImage",
+      "bytes": 131009995,
+      "sha256": "1e1c8e169ca422c2053aaed9a17a64d716d0b2b887a07396bec8d1d5d7786bd4"
+    },
+    {
+      "name": "Stupid-Browser-0.1.0-x64.tar.gz",
+      "bytes": 124639123,
+      "sha256": "ab3a658429dc2a042350ae13d91decfbbb355e90634b95df0587a5e38577c545"
+    },
+    {
+      "name": "Stupid-Browser-0.1.0-x64.zip",
+      "bytes": 158607513,
+      "sha256": "57c6111e91dd7d66e3a50c89d9ce727e02517e82e197842f73f8ae5b15fc7bb7"
+    }
+  ],
+  "verification": {
+    "typecheck": "passed",
+    "unitTests": {
+      "passed": 134,
+      "failed": 0,
+      "skipped": 0
+    },
+    "linux": {
+      "packagedRuntimeChecks": 8,
+      "extractedAppImageRuntimeChecks": 8,
+      "installedRuntimeChecks": 8,
+      "archiveAndFuseChecks": "passed",
+      "fuseMountExecution": "not tested"
+    },
+    "windows": {
+      "archiveIntegrity": "passed",
+      "packageInventory": "passed",
+      "securityFuses": "passed",
+      "nativeRuntime": "not tested",
+      "nativeInstaller": "not included; cross-build helper failed in Wine"
+    },
+    "browserWorkflow": "passed with disposable Linux profiles",
+    "roadmapCompletion": "not claimed"
+  },
+  "limitations": [
+    "Unsigned testing preview; not a Windows production qualification.",
+    "SHA-256 checksums on the same release account do not independently authenticate a compromised publisher.",
+    "Recording requires separate FFmpeg; optional video extraction also requires separate yt-dlp.",
+    "No DRM provider, full Chrome extension system, website credential vault, encrypted sync or signed update channel is included."
+  ]
+}

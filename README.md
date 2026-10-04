@@ -26,7 +26,14 @@ If FUSE is unavailable, extract the AppImage and run it:
 
 The Linux tar.gz contains the unpacked application. Extract it into a writable application directory and run `stupid-browser` as an ordinary user. Never disable Chromium's sandbox to run it.
 
-Windows: download the `.exe` installer, or extract the portable `.zip` and run `stupid-browser.exe`. The installer does not launch the browser automatically when it finishes. Windows may warn about an unsigned application; this preview is intended for testing, not a claim of Windows production readiness.
+Windows: download and extract the portable ZIP, then run `stupid-browser.exe`. For example, in PowerShell:
+
+```powershell
+Expand-Archive .\Stupid-Browser-0.1.0-x64.zip -DestinationPath .\stupid-browser
+.\stupid-browser\stupid-browser.exe
+```
+
+Windows may warn about the unsigned executable. Native Windows execution is not yet validated. The graphical installer is not included because its Wine build helper failed; the incomplete helper is not distributed.
 
 ## Verify files
 
@@ -39,7 +46,7 @@ sha256sum --ignore-missing -c SHA256SUMS.txt
 On Windows PowerShell:
 
 ```powershell
-Get-FileHash .\Stupid-Browser-0.1.0-x64.exe -Algorithm SHA256
+Get-FileHash .\Stupid-Browser-0.1.0-x64.zip -Algorithm SHA256
 ```
 
 Compare the result with `SHA256SUMS.txt`. Checksums detect corruption; they are not a substitute for signed release verification. Distribution currently relies on HTTPS and this GitHub account.

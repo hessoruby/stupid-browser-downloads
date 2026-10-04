@@ -10,7 +10,7 @@ Bundled unmodified MPL-2.0 packages and their corresponding source locations:
 @remusao/smaz-compress 2.2.0: https://github.com/remusao/mono/tree/27c72bf6f12f8e500b19509eef5eb14445e6e2d5/packages/smaz-compress
 @remusao/smaz-decompress 2.2.0: https://github.com/remusao/mono/tree/27c72bf6f12f8e500b19509eef5eb14445e6e2d5/packages/smaz-decompress
 @remusao/trie 2.1.0: https://github.com/remusao/mono/tree/27c72bf6f12f8e500b19509eef5eb14445e6e2d5/packages/trie
-The MPL-2.0 license and package copyright notices are included in THIRD-PARTY-LICENSES.txt in this directory. The surrounding Stupid Browser integration remains MIT licensed.
+The MPL-2.0 license and package copyright notices are included in THIRD_PARTY_LICENSES.txt in this directory. The surrounding Stupid Browser integration remains MIT licensed.
 
 EasyList and EasyPrivacy: Copyright The EasyList authors (https://easylist.to/).
 These snapshots are redistributed under Creative Commons Attribution-ShareAlike 3.0 Unported.
